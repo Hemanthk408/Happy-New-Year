@@ -27,13 +27,15 @@ if name:
         
         # Display the image and personalized message
         st.image(image, caption=f"{name}'s Image", use_column_width=True)
-       
+    
+    # Check for special wishes
     if name in special_wishes:
         st.markdown(f"## 🎆 {special_wishes[name]} 🎆")
-       
+    else:
         st.markdown(f"## 🎆 Happy New Year, {name}! 🎆")
         st.markdown("Wishing you a year filled with joy, success, and happiness! ✨")
-    else:
+    # Error message if the image is not found
+    if not os.path.exists(image_path):
         st.error(f"Sorry, no image found for {name}. Please make sure your name matches the image file name.")
 else:
     st.info("Please enter your name to view your personalized New Year wish.")

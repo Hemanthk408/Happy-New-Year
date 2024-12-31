@@ -35,7 +35,5 @@ if name:
         st.markdown(f"## 🎆 Happy New Year, {name}! 🎆")
         st.markdown("Wishing you a year filled with joy, success, and happiness! ✨")
     # Error message if the image is not found
-    if not os.path.exists(image_path):
-        st.error(f"Sorry, no image found for {name}. Please make sure your name matches the image file name.")
 else:
     st.info("Please enter your name to view your personalized New Year wish.")
